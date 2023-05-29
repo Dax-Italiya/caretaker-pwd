@@ -10,7 +10,7 @@ import {
 } from 'reactstrap';
 
 import { isDarkSwitchActive, adminRoot } from 'constants/defaultValues';
-import { MobileMenuIcon, MenuIcon } from 'components/svg';
+import { MobileMenuIcon } from 'components/svg';
 import {
   setContainerClassnames,
   clickOnMobileMenu,
@@ -23,14 +23,7 @@ import { CURRANT_USER } from 'utils/CONSTANTS';
 import TopnavDarkSwitch from './Topnav.DarkSwitch';
 import Logo from '../../assets/logos/blue_logo.svg';
 
-const TopNav = ({
-  history,
-  containerClassnames,
-  menuClickCount,
-  selectedMenuHasSubItems,
-  setContainerClassnamesAction,
-  clickOnMobileMenuAction,
-}) => {
+const TopNav = ({ history, containerClassnames, clickOnMobileMenuAction }) => {
   const [isInFullScreen, setIsInFullScreen] = useState(false);
 
   const isInFullScreenFn = () => {
@@ -70,19 +63,19 @@ const TopNav = ({
     setIsInFullScreen(!isFS);
   };
 
-  const menuButtonClick = (e, _clickCount, _conClassnames) => {
-    e.preventDefault();
-    setTimeout(() => {
-      const event = document.createEvent('HTMLEvents');
-      event.initEvent('resize', false, false);
-      window.dispatchEvent(event);
-    }, 350);
-    setContainerClassnamesAction(
-      _clickCount + 1,
-      _conClassnames,
-      selectedMenuHasSubItems
-    );
-  };
+  // const menuButtonClick = (e, _clickCount, _conClassnames) => {
+  //   e.preventDefault();
+  //   setTimeout(() => {
+  //     const event = document.createEvent('HTMLEvents');
+  //     event.initEvent('resize', false, false);
+  //     window.dispatchEvent(event);
+  //   }, 350);
+  //   setContainerClassnamesAction(
+  //     _clickCount + 1,
+  //     _conClassnames,
+  //     selectedMenuHasSubItems
+  //   );
+  // };
 
   const mobileMenuButtonClick = (e, _containerClassnames) => {
     e.preventDefault();
@@ -98,7 +91,7 @@ const TopNav = ({
   return (
     <nav className="navbar fixed-top">
       <div className="d-flex align-items-center navbar-left">
-        <NavLink
+        {/* <NavLink
           to="#"
           location={{}}
           className="menu-button d-none d-md-block"
@@ -107,7 +100,7 @@ const TopNav = ({
           }
         >
           <MenuIcon />
-        </NavLink>
+        </NavLink> */}
         <NavLink
           to="#"
           location={{}}

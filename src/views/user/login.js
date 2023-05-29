@@ -8,10 +8,10 @@ import { Colxx } from 'components/common/CustomBootstrap';
 import IntlMessages from 'helpers/IntlMessages';
 // import { adminLogin } from 'utils/API/api';
 import authStorage from 'utils/API/authStroge';
+import { urlList } from 'utils/CONSTANTS';
 import { useHistory } from 'react-router-dom';
 import { ROUTES } from 'utils/Route';
 import useHttp from 'hooks/Use-http';
-import { urlList } from 'utils/CONSTANTS';
 
 import Logo from '../../assets/logos/black.svg';
 
@@ -43,19 +43,24 @@ const Login = () => {
 
   const onUserLogin = (value) => {
     (async () => {
-      console.log(value);
+      // console.log(value);
+      // authStorage.setAuthDetails('tempToken');
+      // window.location.reload();
+      // history.push(`/app${ROUTES.DASHBOARD}`);
       const payload = {
         email: value.email,
         password: value.password,
       };
+      // console.log(payload);
       api.sendRequest(
-        urlList.login,
+        urlList.societyLogin,
         (res) => {
           authStorage.setAuthDetails(res.token);
           window.location.reload();
           history.push(`/app${ROUTES.DASHBOARD}`);
         },
-        payload
+        payload,
+        'Login Successfully!!!'
       );
     })();
   };

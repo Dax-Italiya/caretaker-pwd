@@ -2,7 +2,6 @@ import React, { Suspense } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import UserLayout from 'layout/UserLayout';
 import { ROUTES } from 'utils/Route';
-import authStorage from 'utils/API/authStroge';
 import SignUp from './register';
 import ForgetPassword from './forget-password';
 import UpdatePassword from './update-password';
@@ -12,10 +11,10 @@ const Login = React.lazy(() =>
 );
 
 const User = ({ match }) => {
-  console.log(match);
+  // console.log(match);
 
-  const isLogin = authStorage.getAuthToken();
-  console.log(isLogin);
+  // const isLogin = authStorage.getAuthToken();
+  // console.log(isLogin);
 
   // if (isLogin || true) {
   //   console.log('in');

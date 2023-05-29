@@ -44,9 +44,9 @@ const useHttp = () => {
           console.log(e);
         }
       } catch (err) {
-        if (err?.response?.data?.errors) {
+        if (err?.response?.data?.message) {
           NotificationManager.error(
-            err?.response?.data?.errors,
+            err?.response?.data?.message,
             err?.heading !== '' ? err?.heading : '',
             3000,
             null,

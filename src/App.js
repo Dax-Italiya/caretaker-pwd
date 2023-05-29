@@ -12,8 +12,6 @@ import authStorage from 'utils/API/authStroge';
 // import ColorSwitcher from './components/common/ColorSwitcher';
 import { ROUTES } from 'utils/Route';
 
-import useHttp from 'hooks/Use-http';
-import { CURRANT_USER, urlList } from 'utils/CONSTANTS';
 import { NotificationContainer } from './components/common/react-notifications';
 import { adminRoot, loginRoot } from './constants/defaultValues';
 import { getDirection } from './helpers/Utils';
@@ -41,15 +39,15 @@ const App = ({ locale }) => {
     authStorage.getAuthToken() !== undefined &&
     authStorage.getAuthToken() !== null;
 
-  const api = useHttp();
+  // const api = useHttp();
   // console.log(isLogin);
 
   useEffect(() => {
     if (isLogin) {
-      api.sendRequest(urlList.getAdmin, (res) => {
-        // const [userData] = res?.data;
-        CURRANT_USER.user = res?.data?.admin;
-      });
+      // api.sendRequest(urlList.getAdmin, (res) => {
+      //   // const [userData] = res?.data;
+      //   CURRANT_USER.user = res?.data?.admin;
+      // });
     }
   }, []);
 

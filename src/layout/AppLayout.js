@@ -2,15 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import TopNav from 'containers/navs/Topnav';
-import Sidebar from 'containers/navs/Sidebar';
+// import TopNav from 'containers/navs/Topnav';
+// import Sidebar from 'containers/navs/Sidebar';
 
-const AppLayout = ({ containerClassnames, children, history }) => {
+const AppLayout = ({ containerClassnames, children }) => {
   return (
     <div id="app-container" className={containerClassnames}>
-      <TopNav history={history} />
-      <Sidebar />
-      <main>
+      {/* <TopNav history={history} /> */}
+      <main style={{ margin: '50px 20px' }}>
         <div className="container-fluid">{children}</div>
       </main>
     </div>

@@ -9,6 +9,9 @@ export const urlList = {
   login: { type: 'POST', endpoint: '/admins/login' },
   getAdmin: { type: 'GET', endpoint: '/admins/me' },
 
+  // Society Login api
+  societyLogin: { type: 'POST', endpoint: '/society/login' },
+
   // Society APIs
   getSocieties: { type: 'GET', endpoint: '/admin/society' },
   addSocieties: { type: 'POST', endpoint: '/admin/society' },
