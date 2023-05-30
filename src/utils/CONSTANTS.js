@@ -9,8 +9,14 @@ export const urlList = {
   login: { type: 'POST', endpoint: '/admins/login' },
   getAdmin: { type: 'GET', endpoint: '/admins/me' },
 
-  // Society Login api
+  // Society Login API
   societyLogin: { type: 'POST', endpoint: '/society/login' },
+
+  // Soceity Details API
+  getSociety: { type: 'GET', endpoint: '/society/getMe' },
+
+  // Add Gig Attendance through app
+  addGigAttendance: { type: 'POST', endpoint: '/gig/gigAttendance' },
 
   // Society APIs
   getSocieties: { type: 'GET', endpoint: '/admin/society' },
