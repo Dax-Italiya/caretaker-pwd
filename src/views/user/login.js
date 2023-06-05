@@ -55,6 +55,7 @@ const Login = () => {
       api.sendRequest(
         urlList.societyLogin,
         (res) => {
+          console.log(res);
           authStorage.setAuthDetails(res.token);
           window.location.reload();
           history.push(`/app${ROUTES.DASHBOARD}`);

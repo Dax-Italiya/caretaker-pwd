@@ -21,7 +21,7 @@ const Dashboard = () => {
   const [code, setCode] = useState('');
   const [error, setError] = useState('');
   const mediaQuery = useMediaQuery({ maxWidth: 1000 });
-  const [societyId, setSocietyId] = useState('');
+  const [societyId, setSocietyId] = useState(null);
 
   const history = useHistory();
   const api = useHttp();
@@ -64,15 +64,26 @@ const Dashboard = () => {
 
     // console.log(payload, securityCode);
 
-    // console.log('Code Added');
+    console.log(societyId.length);
     // setInputValue('');
   };
-
+  const token = authStorage.getAuthToken();
   useEffect(() => {
     api.sendRequest(urlList.getSociety, (res) => {
       setSocietyId(res?.data?.id);
     });
   }, []);
+  useEffect(() => {
+    const tockenPayload = {
+      FcmToken: token,
+    };
+    console.log(tockenPayload);
+    const UPDATE_SOCIETY_FCM_TOKEN = { ...urlList.updateToken };
+    UPDATE_SOCIETY_FCM_TOKEN.endpoint =
+      UPDATE_SOCIETY_FCM_TOKEN.endpoint.replace(':id', societyId);
+    console.log(societyId);
+    api.sendRequest(UPDATE_SOCIETY_FCM_TOKEN, () => {}, tockenPayload);
+  }, [societyId]);
   return (
     <>
       <Card

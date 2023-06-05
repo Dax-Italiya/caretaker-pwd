@@ -12,108 +12,14 @@ export const urlList = {
   // Society Login API
   societyLogin: { type: 'POST', endpoint: '/society/login' },
 
+  // Update Society Token API
+  updateToken: { type: 'PATCH', endpoint: '/society/:id' },
+
   // Soceity Details API
   getSociety: { type: 'GET', endpoint: '/society/getMe' },
 
   // Add Gig Attendance through app
   addGigAttendance: { type: 'POST', endpoint: '/gig/gigAttendance' },
-
-  // Society APIs
-  getSocieties: { type: 'GET', endpoint: '/admin/society' },
-  addSocieties: { type: 'POST', endpoint: '/admin/society' },
-  editSocieties: { type: 'PATCH', endpoint: '/admin/society/:id' },
-  deleteSocieties: { type: 'DELETE', endpoint: '/admin/society/:id' },
-
-  // Society -> Tower API
-  getTower: { type: 'GET', endpoint: '/admin/tower' },
-  deleteTower: { type: 'DELETE', endpoint: '/admin/tower/:id' },
-  editTower: { type: 'PATCH', endpoint: '/admin/tower/:id' },
-
-  // Society -> Flat API
-  getFlat: { type: 'GET', endpoint: '/admin/room' },
-  editFlat: { type: 'PATCH', endpoint: '/admin/room/:id' },
-  deleteFlat: { type: 'DELETE', endpoint: '/admin/room/:id' },
-
-  // Society -> Service API
-  getSocietyServices: { type: 'GET', endpoint: '/admin/societyService' },
-
-  // Society -> Parking API
-  getParking: { type: 'GET', endpoint: '/admin/parking' },
-  deleteParking: { type: 'DELETE', endpoint: '/admin/parking/:id' },
-  editParking: { type: 'PATCH', endpoint: '/admin/parking/:id' },
-
-  // Society -> User API
-  getSocietyUsers: { type: 'GET', endpoint: '/admin/userAddress' },
-
-  // Service API
-  getServices: { type: 'GET', endpoint: '/admin/service' },
-  addService: { type: 'POST', endpoint: '/admin/service' },
-  deleteService: { type: 'DELETE', endpoint: '/admin/service/:id' },
-  editService: { type: 'PATCH', endpoint: '/admin/service/:id' },
-
-  // Service -> Service Varity API
-  getServiceVariety: { type: 'GET', endpoint: '/admin/variety' },
-  deleteServiceVariety: { type: 'DELETE', endpoint: '/admin/variety/:id' },
-  editServiceVarietyOption: { type: 'PATCH', endpoint: '/admin/variety/:id' },
-
-  // Users API
-  getUsers: { type: 'GET', endpoint: '/admin/users' },
-  getOneUser: { type: 'GET', endpoint: '/admin/users/:id' },
-  deleteUser: { type: 'DELETE', endpoint: '/admin/users/:id' },
-  editUser: { type: 'PATCH', endpoint: '/admin/users/:id' },
-
-  // User -> Details API
-  getUserDetail: { type: 'GET', endpoint: '/admin/userAddress' },
-
-  // User -> service API
-  getUserData: { type: 'GET', endpoint: '/admin/booking' },
-
-  // Gigs API
-  getGigs: { type: 'GET', endpoint: '/admin/gigs' },
-  addGig: { type: 'POST', endpoint: '/admin/gigs' },
-  editGig: { type: 'PATCH', endpoint: '/admin/gigs/:id' },
-  deleteGig: { type: 'DELETE', endpoint: '/admin/gigs/:id' },
-
-  // Gigs API -> Schedule API
-  getGigSchedule: { type: 'GET', endpoint: '/admin/gigSchedule' },
-  editGigSchedule: { type: 'PATCH', endpoint: '/admin/gigSchedule/:id' },
-  deleteGigSchedule: { type: 'DELETE', endpoint: '/admin/gigSchedule/:id' },
-
-  // Gigs API -> Attendance API
-  getGigAttendance: { type: 'GET', endpoint: '/admin/gigAttendance' },
-
-  // Gigs API -> Service API
-  getGigService: { type: 'GET', endpoint: '/admin/gigService' },
-  addGigService: { type: 'POST', endpoint: '/admin/gigService' },
-  editGigService: { type: 'PATCH', endpoint: '/admin/gigService/:id' },
-  deleteGigService: { type: 'DELETE', endpoint: '/admin/gigService/:id' },
-
-  // Feedbacl  APIs
-  getFeedback: { type: 'GET', endpoint: '/admin/bookingFeedback' },
-
-  // Role and Access API
-  getTeam: { type: 'GET', endpoint: '/admins' },
-  addTeam: { type: 'POST', endpoint: '/admins/add' },
-
-  // Setting  APIs
-
-  // Setting -> Service Category API
-  getServiceCategories: { type: 'GET', endpoint: '/admin/serviceCategory' },
-  addServiceCategories: { type: 'POST', endpoint: '/admin/serviceCategory' },
-  editServiceCategories: {
-    type: 'PATCH',
-    endpoint: '/admin/serviceCategory/:id',
-  },
-  deleteServiceCategories: {
-    type: 'DELETE',
-    endpoint: '/admin/serviceCategory/:id',
-  },
-
-  // Setting -> City API
-  getCitys: { type: 'GET', endpoint: '/admin/city' },
-  sendCity: { type: 'POST', endpoint: '/admin/city' },
-  deleteCity: { type: 'DELETE', endpoint: '/admin/city/:id' },
-  editCity: { type: 'PATCH', endpoint: '/admin/city/:id' },
 };
 
 const textRanders = ({ value }) => <>{value}</>;
