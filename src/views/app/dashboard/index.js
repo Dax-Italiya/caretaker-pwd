@@ -35,9 +35,9 @@ const Dashboard = () => {
 
   const handlePincodeChange = (event) => {
     setCode(event.target.value);
-    const pincodeRegex = /^\d{10}$/;
+    const pincodeRegex = /^\d{6}$/;
     if (!pincodeRegex.test(event.target.value)) {
-      setError('Field must contian  10 digits only');
+      setError('Field must contain  6 digits only');
     } else {
       setError('');
     }
@@ -64,7 +64,6 @@ const Dashboard = () => {
 
     // console.log(payload, securityCode);
 
-    console.log(societyId.length);
     // setInputValue('');
   };
   const token = authStorage.getAuthToken();
@@ -77,12 +76,12 @@ const Dashboard = () => {
     const tockenPayload = {
       FcmToken: token,
     };
-    console.log(tockenPayload);
+    // console.log(tockenPayload);
     const UPDATE_SOCIETY_FCM_TOKEN = { ...urlList.updateToken };
     UPDATE_SOCIETY_FCM_TOKEN.endpoint =
       UPDATE_SOCIETY_FCM_TOKEN.endpoint.replace(':id', societyId);
-    console.log(societyId);
-    api.sendRequest(UPDATE_SOCIETY_FCM_TOKEN, () => {}, tockenPayload);
+    // console.log(societyId);
+    api.sendRequest(UPDATE_SOCIETY_FCM_TOKEN, () => { }, tockenPayload);
   }, [societyId]);
   return (
     <>
@@ -151,7 +150,7 @@ const Dashboard = () => {
                 value={code}
                 onChange={handlePincodeChange}
                 style={
-                  error && code?.length !== 10
+                  error && code?.length !== 6
                     ? { border: '1px solid red' }
                     : {}
                 }
@@ -166,8 +165,9 @@ const Dashboard = () => {
                 <Button
                   block
                   color="primary"
-                  disabled={code?.length !== 10}
+                  disabled={code?.length !== 6}
                   outline
+
                 >
                   Submit
                 </Button>
