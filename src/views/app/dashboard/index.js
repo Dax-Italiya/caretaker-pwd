@@ -50,8 +50,8 @@ const Dashboard = () => {
       societyId: +societyId,
       securityCode: code,
       isPresent: 'true',
-      date: moment().format('YYYY-MM-DD'),
-      startTime: moment().format('HH:mm:ss'),
+      date: moment().utc().format('YYYY-MM-DD'),
+      startTime: moment().utc().format('HH:mm:ss'),
     };
     api.sendRequest(
       urlList.addGigAttendance,
